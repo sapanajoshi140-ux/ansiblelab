@@ -3,4 +3,20 @@
 
   roles:
     - geerlingguy.docker
+
+  tasks:
+
+    - name: Create homepage
+      ansible.builtin.copy:
+        content: "Hello World from Ansible!!!"
+        dest: /opt/site/index.html
   
+    - name: Run nginx in a container
+      community.docker.docker_container:
+        name: hello-nginx
+        image: nginx:latest
+        state: started
+        ports:
+          - "8080:80"
+        volumes:
+          - "/opt/site:/usr/share/nginx/html:ro"

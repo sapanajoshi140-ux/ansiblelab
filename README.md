@@ -4,7 +4,7 @@ Ansible Labs for DevOps
 
 ## Assignment Solution
 
-### 1. Create `requirements.yml`
+### 1. Create `requirement.yml`
 
 ```yaml
 roles:
@@ -14,7 +14,7 @@ roles:
 ### 2. Install the Role
 
 ```bash
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirement.yml
 ```
 
 <img width="958" alt="Install Role" src="https://github.com/user-attachments/assets/23c3aab7-1780-4500-b66f-4e1979b604a2" />

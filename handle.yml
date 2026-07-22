@@ -1,0 +1,23 @@
+- hosts: web
+  become: true
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+
+    - name: templates 
+      ansible.builtin.template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+      notify: Restart nginx
+
+  handlers:
+     - name: Restart nginx
+       ansible.builtin.service:
+         name: nginx
+         state: restarted
+

@@ -1,0 +1,16 @@
+- hosts: web
+  become: true
+  tasks:
+    - name : Install tools
+      ansible.builtin.apt:
+        name: "{{item}}"
+        state: present
+        update_cache: true
+
+      loop:
+        - htop
+        - git
+      when: ansible_facts['os_family'] == "Debian"
+
+
+

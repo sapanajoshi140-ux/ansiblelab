@@ -1,0 +1,18 @@
+
+- hosts: localhost
+  become: true
+  gather_facts: false
+  post_tasks:
+    - name: post
+      ansible.builtin.debug:
+        msg: "3) post_tasks"
+  pre_tasks:
+    - name: pre
+      ansible.builtin.debug:
+        msg: "1) pre_tasks"
+  tasks:
+    - name: install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+

@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    varname: "working on a lab"
+  tasks:
+    - name: "test filters"
+      ansible.builtin.debug:
+        msg: "{{varname | lower }} - {{varname|length}} chars - {{missing | default('fallback')}}"
+

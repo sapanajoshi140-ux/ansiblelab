@@ -1,0 +1,6 @@
+- hosts: web
+  tasks:
+    - name: show variable with fact
+      ansible.builtin.debug:
+        msg: "{{sitename}} on {{inventory_hostname}} ({{ansible_facts['distribution']}}) having process {{worker_process}}"
+

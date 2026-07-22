@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>{{ sitename }}</title></head>
+<body>
+  <h1>{{ sitename }}</h1>
+  <p>Served by {{ inventory_hostname }} ({{ ansible_facts['default_ipv4']['address'] }})</p>
+  <p>OS: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }} - {{ ansible_facts['processor_vcpus'] }} vCPU</p>
+</body>
+</html>
